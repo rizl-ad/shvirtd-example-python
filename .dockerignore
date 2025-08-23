@@ -1,2 +1,4 @@
 .env
-proxy.yaml
+Dockerfile
+README.md
+schema.pdf
