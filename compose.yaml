@@ -40,10 +40,10 @@ services:
       DB_PASSWORD: ${DB_PASSWORD}
       DB_NAME: ${DB_DATABASE}
     #volumes:
-    #  - /home/rizl/crd_data/ca.pem:/app/ca.pem
-    #  - /home/rizl/crd_data/client-cert.pem:/app/client-cert.pem
-    #  - /home/rizl/crd_data/client-key.pem:/app/client-key.pem
-    #  - /home/rizl/crd_data:/app/cert
+    #  - ./crd_data/ca.pem:/app/ca.pem
+    #  - ./crd_data/client-cert.pem:/app/client-cert.pem
+    #  - ./crd_data/client-key.pem:/app/client-key.pem
+    #  - ./crd_data:/app/cert
     networks:
       backend:
         ipv4_address: 172.20.0.5
@@ -57,9 +57,9 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
-      - /home/rizl/work_5/init.sql:/docker-entrypoint-initdb.d/init.sql:rw
-      - /home/rizl/work_5/my.cnf:/etc/my.cnf:rw
-    #  - /home/rizl/crd_data:/var/lib/mysql:rw
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql:rw
+      - ./my.cnf:/etc/my.cnf:rw
+    #  - ./crd_data:/var/lib/mysql:rw
     networks:
       backend:
         ipv4_address: 172.20.0.10
